@@ -1,5 +1,17 @@
-- name: Set up Clang
-  uses: egor-tensin/setup-clang@v2
-  with:
-    version: latest
-    platform: x64
+steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Use node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12.13.0'
+          check-latest: true
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Kernel
+        run: |
+          echo "Запуск сборки..."
+          # Твои команды сборки ядра
