@@ -1,2 +1,0 @@
-- name: Clang Format Github Action
-  uses: RafikFarhad/clang-format-github-action@v6.0.1
