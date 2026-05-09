@@ -1,0 +1,6 @@
+- name: Download AOSP Clang
+  run: |
+    mkdir clang
+    curl -L https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/main/clang-r522040.tar.gz -o clang.tar.gz
+    tar -C clang/ -xf clang.tar.gz
+    echo "$(pwd)/clang/bin" >> $GITHUB_PATH
